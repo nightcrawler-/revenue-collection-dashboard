@@ -1,0 +1,56 @@
+<div class="row padded">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <!-- START panel-->
+    <div class="panel panel-default">
+      <div class="panel-heading">Profile Update</div>
+      <div class="panel-body">
+
+        <%= form_for(@p_user) do |f| %>
+            <% if @p_user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@p_user.errors.count, "error") %> prohibited this p_user from being
+                    saved:</h2>
+
+                  <ul>
+                    <% @p_user.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+            <% end %>
+
+            <div class="form-group has-feedback">
+              <%= f.label :'Select profile picture', class: 'text-muted' %>
+              <%= f.file_field :avatar %>
+            </div>
+
+            <% if !@p_user.verified %>
+                <div class="form-group has-feedback">
+                  <%= f.label :'Select verification documents (ID picture)', class: 'text-muted' %>
+                  <%= f.file_field :id_slash_passport_pic %>
+                </div>
+            <% end %>
+
+            <% if !@p_user.id_number %>
+                <div class="form-group has-feedback">
+                  <%= f.label :'ID/Passport Number', class: 'text-muted' %>
+                  <%= f.text_field :id_number, class: 'form-control', placeholder: 'Enter ID/Passport number', id: 'editIdNumber' %>
+                  <span class="fa fa-barcode form-control-feedback text-muted"></span>
+                </div>
+            <% end %>
+
+
+
+            <%= f.submit 'Done', class: 'btn btn-block btn-primary mt-lg' %>
+
+        <% end %>
+
+      </div>
+    </div>
+
+    <!-- END panel-->
+  </div>
+  <div class="col-md-4"></div>
+</div>
+

@@ -1,0 +1,94 @@
+<% provide(:title, 'Sign up') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <<%= render 'shared/head' %>
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="block-center">
+    <div class="row padded">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <!-- START panel-->
+        <div class="panel panel-dark panel-flat">
+          <div class="panel-heading text-center">
+            Bungoma County
+          </div>
+          <div class="panel-body">
+            <p class="text-center pv">REGISTER TO ACCESS SERVICES</p>
+
+            <%= form_for(@p_user) do |c| %>
+
+                <%= render 'shared/error_messages' %>
+
+                <div class="form-group has-feedback">
+
+                  <%= c.label 'First name', class: 'text-muted' %>
+                  <%= c.text_field :first_name, class: 'form-control', placeholder: 'Enter first name' %>
+                  <span class="fa fa-user form-control-feedback text-muted"></span>
+                </div>
+                <div class="form-group has-feedback">
+                  <%= c.label 'Last name', class: 'text-muted' %>
+                  <%= c.text_field :last_name, class: 'form-control', placeholder: 'Enter last name' %>
+                  <span class="fa fa-user-secret form-control-feedback text-muted"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <%= c.label :'Email', class: 'text-muted' %>
+                  <%= c.email_field :email, class: 'form-control', placeholder: 'Enter email' %>
+                  <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                </div>
+
+                <!--
+            <div class="form-group has-feedback">
+              <%= c.label :'ID/Passport number', class: 'text-muted' %>
+              <%= c.text_field :id_number, class: 'form-control', placeholder: 'Enter ID/Passport number' %>
+              <span class="fa fa-barcode form-control-feedback text-muted"></span>
+            </div>
+            -->
+
+                <div class="form-group has-feedback">
+                  <%= c.label :'Password', class: 'text-muted' %>
+                  <%= c.password_field :password, class: 'form-control', placeholder: 'Enter password', type: 'password', id: 'signupInputPassword1' %>
+                  <span class="fa fa-lock form-control-feedback text-muted"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <%= c.label :'Re-type password', class: 'text-muted' %>
+                  <%= c.password_field :password_confirmation, class: 'form-control', placeholder: 'Enter password', type: 'password', id: 'signupInputPassword1' %>
+                  <span class="fa fa-lock form-control-feedback text-muted"></span>
+                </div>
+
+                <div class="clearfix">
+                  <div class="checkbox c-checkbox pull-left mt0">
+                    <label>
+                      <input type="checkbox" value="" required name="agreed">
+                      <span class="fa fa-check"></span>I agree with the <a href="#">terms</a>
+                    </label>
+                  </div>
+                </div>
+                <%= c.submit 'Create my account', class: 'btn btn-block btn-primary mt-lg' %>
+
+
+            <% end %>
+
+            <p class="pt-lg text-center">Have an account?</p>
+            <a href="login.html" class="btn btn-block btn-default">Sign in</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+
+    </div>
+    <!-- END panel-->
+    <%= render 'shared/footer' %>
+
+  </div>
+</div>
+<%= render 'shared/scripts' %>
+</body>
+
+</html>

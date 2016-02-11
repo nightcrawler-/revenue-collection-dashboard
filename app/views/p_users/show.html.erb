@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%= render 'shared/head' %>
+
+<body>
+<div class="wrapper">
+  <!-- Main section-->
+
+  <%= render 'shared/frame' %>
+
+  <section>
+    <!-- Page content-->
+    <div class="content-wrapper">
+      <div class="unwrap">
+        <div style="background-image: url(http://themicon.co/theme/angle/v3.2/backend-jquery/app/img/profile-bg.jpg)" class="bg-cover">
+          <div class="p-xl text-center text-white">
+            <%= image_tag @p_user.avatar.url(:medium), :class => 'img-thumbnail img-circle thumb128' %>
+            <p></p>
+            <h3 class="m0"><%= @p_user.first_name %> <%= @p_user.last_name %></h3>
+            <p>Member since <%= @p_user.created_at %></p>
+            <p><%= @p_user.email %></p>
+          </div>
+        </div>
+        <div class="text-center bg-gray-dark p-lg mb-xl">
+          <div class="row row-table">
+            <div class="col-xs-4 br">
+              <h3 class="m0">0</h3>
+              <p class="m0">
+                <span>Payments</span>
+              </p>
+            </div>
+            <div class="col-xs-4 br">
+              <h3 class="m0">0</h3>
+              <p class="m0">Properties</p>
+            </div>
+            <div class="col-xs-4">
+              <h3 class="m0">0</h3>
+              <p class="m0">Requests</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-lg">
+          <div class="row">
+            <div class="col-lg-4">
+
+              <% if !@p_user.id_number %>
+                  <%= render :partial => 'incomplete_profile' %>
+              <% end %>
+
+            </div>
+
+            <div class="col-lg-4">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="text-center">
+                    <p id="notice"><%= notice %></p>
+
+                    <h3 class="mt0"><%= @p_user.first_name %> <%= @p_user.last_name %></h3>
+                    <p>Joined 2002</p>
+                  </div>
+                  <hr>
+                  <ul class="list-unstyled ph-xl">
+                    <li>
+                      <em class="fa fa-home fa-fw mr-lg"></em>Prime Place
+                    </li>
+                    <li>
+                      <em class="fa fa-briefcase fa-fw mr-lg"></em><a href="#">Town</a>
+                    </li>
+                    <li>
+                      <em class="fa fa-graduation-cap fa-fw mr-lg"></em>Business
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4">
+
+              <% if @p_user.verified %>
+                  <%= render :partial => 'verified_panel' %>
+              <% end %>
+              <% if !@p_user.verified && !@p_user.id_slash_passport_pic %>
+                  <%= render :partial => 'unverified_panel' %>
+              <% end %>
+              <% if !@verified && !@p_user.verified && @p_user.id_slash_passport_pic %>
+                  <%= render :partial => 'failed_verification_panel' %>
+              <% end %>
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <!-- Page footer-->
+  <%= render 'shared/footer' %>
+</div>
+
+<%= render 'shared/scripts' %>
+
+</body>
+
+</html>

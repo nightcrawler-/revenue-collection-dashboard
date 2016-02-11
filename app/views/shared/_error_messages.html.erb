@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/assets/bootstrap.css" id="bscss">
+</head>
+<body>
+
+<% if @p_user.errors.any? %>
+
+    <div role="alert" class="alert alert-danger">
+      The form contains <%= pluralize(@p_user.errors.count, "error") %>.
+
+    </div>
+    <div id="error_explanation">
+
+      <ul>
+        <% @p_user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+
+<% end %>
+<script src="/assets/bootstrap.js"></script>
+</body>
+
+
+</html>
