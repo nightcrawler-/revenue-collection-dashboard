@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3862150666">
+  <component name="DataSourceManagerImpl" format="xml" hash="1870382860">
     <data-source source="LOCAL" name="PostgreSQL - revenue_collection@test.postgres.bungomarevenue.co.ke" uuid="b563dbae-e847-4b12-97dc-3555694d8beb">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://test.postgres.bungomarevenue.co.ke:5432/revenue_collection</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - revenue_collection@postgres.bungomarevenue.co.ke" uuid="da2f2a22-7c98-40f0-9457-6bc9300527c8">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://postgres.bungomarevenue.co.ke:5432/revenue_collection</jdbc-url>
     </data-source>
   </component>
 </project>

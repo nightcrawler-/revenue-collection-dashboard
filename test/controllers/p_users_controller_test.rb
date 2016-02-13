@@ -16,9 +16,9 @@ class PUsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create p_user" do
+  test "should show p_user" do
     assert_difference('PUser.count') do
-      post :create, p_user: { email: @p_user.email, first_name: @p_user.first_name, id_number: @p_user.id_number, last_name: @p_user.last_name, password: @p_user.password, pic_url: @p_user.pic_url, verified: @p_user.verified }
+      post :show, p_user: {email: @p_user.email, first_name: @p_user.first_name, id_number: @p_user.id_number, last_name: @p_user.last_name, password: @p_user.password, pic_url: @p_user.pic_url, verified: @p_user.verified }
     end
 
     assert_redirected_to p_user_path(assigns(:p_user))

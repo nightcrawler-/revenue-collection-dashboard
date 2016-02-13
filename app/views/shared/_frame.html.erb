@@ -5,12 +5,13 @@
     <!-- START navbar header-->
     <div class="navbar-header">
       <a href="#/" class="navbar-brand">
-        <div class="brand-logo">
+        <!--<div class="brand-logo">
           <img src="img/logo.png" alt="App Logo" class="img-responsive">
         </div>
         <div class="brand-logo-collapsed">
           <img src="img/logo-single.png" alt="App Logo" class="img-responsive">
         </div>
+        -->
       </a>
     </div>
     <!-- END navbar header-->
@@ -19,15 +20,7 @@
 
     </div>
     <!-- END Nav wrapper-->
-    <!-- START Search form-->
-    <form role="search" action="search.html" class="navbar-form">
-      <div class="form-group has-feedback">
-        <input type="text" placeholder="Type and hit enter ..." class="form-control">
-        <div data-search-dismiss="" class="fa fa-times form-control-feedback"></div>
-      </div>
-      <button type="submit" class="hidden btn btn-default">Submit</button>
-    </form>
-    <!-- END Search form-->
+
   </nav>
   <!-- END Top Navbar-->
 </header>
@@ -38,35 +31,16 @@
     <nav data-sidebar-anyclick-close="" class="sidebar">
       <!-- START sidebar nav-->
       <ul class="nav">
-        <!-- START user info-->
-        <li class="has-user-block">
-          <div id="user-block" class="collapse">
-            <div class="item user-block">
-              <!-- User picture-->
-              <div class="user-block-picture">
-                <div class="user-block-status">
-                  <img src="img/user/02.jpg" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle">
-                  <div class="circle circle-success circle-lg"></div>
-                </div>
-              </div>
-              <!-- Name and Job-->
-              <div class="user-block-info">
-                <span class="user-block-name">Hello, Mike</span>
-                <span class="user-block-role">Designer</span>
-              </div>
-            </div>
-          </div>
-        </li>
-        <!-- END user info-->
         <!-- Iterates over all sidebar items-->
         <li class="nav-heading ">
           <span data-localize="sidebar.heading.HEADER">Content</span>
         </li>
         <li class=" ">
-          <a href="#home" title="Home" data-toggle="collapse">
-            <em class="fa fa-home"></em>
-            <span data-localize="sidebar.nav.HOME">Home</span>
-          </a>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><em class="fa fa-home"></em></div>
+            <div class="col-md-4"><%= link_to 'Home', home_path %></div>
+          </div>
 
         </li>
         <li class=" ">

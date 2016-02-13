@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   resources :p_users
+
+  get 'payment/filter' => 'payment#filter' #for form filtering
+
+  get 'payment' => 'payment#new'
+  post 'payment' => 'payment#show'
+
+  get 'home' => 'home#show'
   get 'register' => 'p_users#new'
   get 'me/:id' => 'p_users#show'
 
   get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
+  post 'login' => 'sessions#show'
   delete 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.

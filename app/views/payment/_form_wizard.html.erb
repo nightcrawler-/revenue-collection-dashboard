@@ -1,0 +1,91 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Make a payment</div>
+  <div class="panel-body">
+    <%= form_for(:payment, url: payment_path, :html => {:id => 'example-form'}) do |f| %>
+        <div>
+          <h4>Basics
+            <br>
+            <small>Rudimentary payment details</small>
+          </h4>
+          <fieldset class="last-child">
+            <div class="form-group">
+              <label class="control-label">Service Category</label>
+              <div>
+                <%= f.select :revenue_subgroup_id, @revenue_subgroups.collect { |p| [p.name, p.id] }.insert(0, 'Select a category..'), {}, {class: 'form-control m-b required'} %>
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <label class="control-label">Location</label>
+              <div>
+                <%= f.select :ward_id, @wards.collect { |p| [p.ward_name, p.county_code] }.insert(0, 'Select a location..'), {}, {class: 'form-control m-b required'} %>
+              </div>
+            </div>
+
+            <br>
+            <div class="form-group">
+              <label class="control-label">Service</label>
+              <select id="service_options" name="revenue" class="form-control m-b required">
+                <option value="0">Select..</option>
+              </select>
+            </div>
+
+          </fieldset>
+          <h4>Details
+            <br>
+            <small>Refine payment</small>
+          </h4>
+          <fieldset>
+            <label for="name">Narration *</label>
+            <input id="name" name="name" type="text" class="form-control required" placeholder="Number plate">
+            <br>
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <!-- START widget-->
+                <div class="panel widget">
+                  <div class="panel-body bg-info text-center">
+                    <div id="cost" class="text-lg m0">KSh. 3,000</div>
+                    <p>Cost</p>
+                    <div class="mb-lg"></div>
+                    <em class="fa fa-credit-card text-alpha"></em>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4"></div>
+              <!-- END widget-->
+            </div>
+          </fieldset>
+
+
+          <h4>Payment mode
+            <br>
+            <small>Preferred payment option</small>
+          </h4>
+          <fieldset>
+            <div class="form-group">
+              <% @payment_modes.each do |payment_mode| %>
+                  <div class="radio">
+                    <label>
+                      <%= f.radio_button :id, payment_mode.name %>
+                      <%= label :payment_mode, payment_mode.name %>
+                    </label>
+                  </div>
+
+              <% end %>
+            </div>
+          </fieldset>
+          <h4>Finish
+            <br>
+            <small>You are done now</small>
+          </h4>
+          <fieldset>
+            <p class="lead">Depending on the payment mode selected, additional instructions or whatnot will appear
+              here</p>
+
+          </fieldset>
+        </div>
+    <% end %>
+  </div>
+
+</div>

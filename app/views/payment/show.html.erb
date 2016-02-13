@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%= render 'shared/head' %>
+
+<body>
+
+<div class="wrapper">
+  <!-- Main section-->
+  <%= render 'shared/frame' %>
+  <section>
+    <!-- Page content-->
+    <div class="content-wrapper">
+      <h3>Receipt</h3>
+      <%= render :partial => 'receipt' %>
+    </div>
+  </section>
+</div>
+<%= render 'shared/footer' %>
+<%= render 'shared/scripts' %>
+
+</body>
+
+</html>
