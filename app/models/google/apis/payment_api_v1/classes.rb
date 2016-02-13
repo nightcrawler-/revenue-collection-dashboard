@@ -235,6 +235,11 @@ module Google
         attr_accessor :narration
       
         # 
+        # Corresponds to the JSON property `pUserId`
+        # @return [Fixnum]
+        attr_accessor :p_user_id
+      
+        # 
         # Corresponds to the JSON property `paymentMode`
         # @return [Google::Apis::PaymentApiV1::PaymentMode]
         attr_accessor :payment_mode
@@ -271,6 +276,7 @@ module Google
           @devices = args[:devices] if args.key?(:devices)
           @id = args[:id] if args.key?(:id)
           @narration = args[:narration] if args.key?(:narration)
+          @p_user_id = args[:p_user_id] if args.key?(:p_user_id)
           @payment_mode = args[:payment_mode] if args.key?(:payment_mode)
           @receipt_number = args[:receipt_number] if args.key?(:receipt_number)
           @revenue = args[:revenue] if args.key?(:revenue)

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   resources :p_users
 
-  get 'payment/filter' => 'payment#filter' #for form filtering
-
+  get 'payment/filter' => 'payment#filter' #for form filtering based on selection
   get 'payment' => 'payment#new'
-  post 'payment' => 'payment#show'
+  get 'payment/:id' => 'payment#show'
+  post 'payment' => 'payment#submit'
 
   get 'home' => 'home#show'
   get 'register' => 'p_users#new'

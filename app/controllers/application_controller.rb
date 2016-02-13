@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
   include VerifyHelper
   include HomeHelper
   include PaymentHelper
+  include Tokenable
 end

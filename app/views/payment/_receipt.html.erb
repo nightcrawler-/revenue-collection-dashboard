@@ -1,7 +1,7 @@
 <div class="panel">
   <div class="panel-body">
     <button type="button" class="pull-right btn btn-default btn-sm">Copy this receipt</button>
-    <h3 class="mt0">00004879</h3>
+    <h3 class="mt0"><%= @payment_result.receipt_number %></h3>
     <hr>
     <div class="row mb-lg">
       <div class="col-lg-4 col-xs-6 br pv">
@@ -13,10 +13,10 @@
             <em class="fa fa-barcode fa-4x text-muted"></em>
           </div>
           <div class="col-md-10">
-            <h4>KYE 604</h4>
+            <h4><%= @payment_result.narration %></h4>
             <address></address>
-            Parking
-            <br>One Day
+            <%= @payment_result.revenue.revenue_stream.name %>
+            <br><%= @payment_result.revenue.revenue_units.name %>
             <br>Location
           </div>
         </div>
@@ -31,11 +31,11 @@
       <div class="col-lg-4 col-xs-6 pv">
         <div class="clearfix">
           <p class="pull-left">Receipt No.
-          <p class="pull-right mr">00004879</p>
+          <p class="pull-right mr"><%= @payment_result.receipt_number %></p>
         </div>
         <div class="clearfix">
           <p class="pull-left">Date</p>
-          <p class="pull-right mr">25/08/2014</p>
+          <p class="pull-right mr"><%= @payment_result.transaction_date.to_datetime %></p>
         </div>
 
       </div>
@@ -53,11 +53,14 @@
         </thead>
         <tbody>
         <tr>
-          <td>Parking</td>
-          <td>KYE 604 - Saloon Car, One Day</td>
+          <td><%= (@payment_result.id) %></td>
+          <td><%= (@payment_result.revenue.revenue_subgroup.name) + ': '+
+                      (@payment_result.narration) + ' - '+
+                      (@payment_result.revenue.revenue_stream.name) +', '+
+                      (@payment_result.revenue.revenue_units.name) %></td>
           <td>1</td>
-          <td>KSh. 200</td>
-          <td class="text-right">KSh. 200</td>
+          <td>KSh. <%= @payment_result.amount %></td>
+          <td class="text-right">KSh. <%= @payment_result.amount %></td>
         </tr>
         </tbody>
       </table>
@@ -66,15 +69,15 @@
       <div class="col-sm-offset-8 col-sm-4 pv">
         <div class="clearfix">
           <p class="pull-left">Subtotal</p>
-          <p class="pull-right mr">KSh. 300</p>
+          <p class="pull-right mr">KSh. <%= @payment_result.amount %></p>
         </div>
         <div class="clearfix">
-          <p class="pull-left">Tax (21%)</p>
-          <p class="pull-right mr">KSh. 50</p>
+          <p class="pull-left">Tax (0%)</p>
+          <p class="pull-right mr">KSh. 0</p>
         </div>
         <div class="clearfix">
           <p class="pull-left h3">GRAND TOTAL</p>
-          <p class="pull-right mr h3">KSh. 4000</p>
+          <p class="pull-right mr h3">KSh. <%= @payment_result.amount %></p>
         </div>
       </div>
     </div>

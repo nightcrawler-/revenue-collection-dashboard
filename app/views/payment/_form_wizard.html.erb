@@ -23,6 +23,8 @@
             </div>
 
             <br>
+            <input style="display: none" id="amount" name="amount" type="text" class="form-control required">
+
             <div class="form-group">
               <label class="control-label">Service</label>
               <select id="service_options" name="revenue" class="form-control m-b required">
@@ -36,15 +38,16 @@
             <small>Refine payment</small>
           </h4>
           <fieldset>
-            <label for="name">Narration *</label>
-            <input id="name" name="name" type="text" class="form-control required" placeholder="Number plate">
+            <label for="narration">Narration *</label>
+            <input id="narration" name="narration" type="text" class="form-control required" placeholder="Number plate, blobk number, etc">
             <br>
+
             <div class="row">
               <div class="col-md-4"></div>
               <div class="col-md-4">
                 <!-- START widget-->
                 <div class="panel widget">
-                  <div class="panel-body bg-info text-center">
+                  <div class="panel-body bg-success text-center">
                     <div id="cost" class="text-lg m0">KSh. 3,000</div>
                     <p>Cost</p>
                     <div class="mb-lg"></div>
@@ -67,7 +70,7 @@
               <% @payment_modes.each do |payment_mode| %>
                   <div class="radio">
                     <label>
-                      <%= f.radio_button :id, payment_mode.name %>
+                      <%= f.radio_button :payment_mode_id, payment_mode.id %>
                       <%= label :payment_mode, payment_mode.name %>
                     </label>
                   </div>

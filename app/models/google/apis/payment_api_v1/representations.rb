@@ -146,6 +146,7 @@ module Google
       
           property :id, as: 'id'
           property :narration, as: 'narration'
+          property :p_user_id, as: 'pUserId'
           property :payment_mode, as: 'paymentMode', class: Google::Apis::PaymentApiV1::PaymentMode, decorator: Google::Apis::PaymentApiV1::PaymentMode::Representation
       
           property :receipt_number, as: 'receiptNumber'

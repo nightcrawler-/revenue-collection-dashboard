@@ -1,5 +1,4 @@
 module PaymentHelper
-  require 'google/apis/wards_api_v1'
 
   def list_wards
     @WardsApi = Google::Apis::WardsApiV1 #alias wards api
@@ -26,6 +25,19 @@ module PaymentHelper
     @revenue_api = @RevenueApi::RevenueApiService.new #init service
 
     @revenues = @revenue_api.list(revenue_sub_group_id: sub_id, sub_county_group_id: ward_id)
+  end
+
+  def insert_payment(payment)
+    @PaymentApi = Google::Apis::PaymentApiV1 #alias payment api
+    @payment_api = @PaymentApi::PaymentApiService.new
+    @payment_api.insert(payment);
+  end
+
+  def get_payment(receipt_number)
+    @PaymentApi = Google::Apis::PaymentApiV1 #alias payment api
+    @payment_api = @PaymentApi::PaymentApiService.new
+    @payment_result = @payment_api.get(receipt_number)
+
   end
 
 
