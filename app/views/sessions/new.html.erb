@@ -1,25 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Bootstrap Admin App + jQuery">
-  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-  <title>Angle - Bootstrap Admin Template</title>
-  <!-- =============== VENDOR STYLES ===============-->
-  <!-- FONT AWESOME-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- SIMPLE LINE ICONS-->
-  <link rel="stylesheet" href="/assets/simple-line-icons.css">
-
-  <!-- =============== BOOTSTRAP STYLES ===============-->
-  <link rel="stylesheet" href="/assets/bootstrap.css" id="bscss">
-  <!-- =============== APP STYLES ===============-->
-  <link rel="stylesheet" href="/assets/app.css" id="maincss">
-  <link rel="stylesheet" href="/assets/portal.css" id=pscss>
-</head>
-
+<%= render 'shared/head' %>
 <body>
 <div class="wrapper">
   <div class="block-center mt-xl wd-xl">
@@ -72,17 +53,7 @@
     <%= render 'shared/footer' %>
   </div>
 </div>
-<!-- =============== VENDOR SCRIPTS ===============-->
-<!-- JQUERY-->
-<script src="/assets/jquery.js"></script>
-<!-- BOOTSTRAP-->
-<script src="/assets/bootstrap.js"></script>
-<!-- STORAGE API-->
-<script src="/assets/jquery.storageapi.js"></script>
-<!-- PARSLEY-->
-<script src="/assets/parsley.min.js"></script>
-<!-- =============== APP SCRIPTS ===============-->
-<script src="/assets/app.js"></script>
+<%= render 'shared/scripts' %>
 </body>
 
 </html>
