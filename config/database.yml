@@ -83,4 +83,4 @@ test:
 #
 production:
   <<: *default
-host: postgres.bungomarevenue.co.ke
+  host: postgres.bungomarevenue.co.ke
