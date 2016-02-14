@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: bungoma_county_portal_production
-  username: bungoma_county_portal
-  password: <%= ENV['BUNGOMA_COUNTY_PORTAL_DATABASE_PASSWORD'] %>
+host: postgres.bungomarevenue.co.ke
