@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :p_users
 
-  root 'home#show'
-
   get 'payment/filter' => 'payment#filter' #for form filtering based on selection
   get 'payment' => 'payment#new'
   get 'payment/:id' => 'payment#show'
