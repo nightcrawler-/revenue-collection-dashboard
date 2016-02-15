@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'me/:id' => 'p_users#show'
 
   get 'login' => 'sessions#new'
-  post 'login' => 'sessions#show'
+  post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
