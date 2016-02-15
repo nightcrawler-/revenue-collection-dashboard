@@ -35,30 +35,20 @@
         <li class="nav-heading ">
           <span data-localize="sidebar.heading.HEADER">Content</span>
         </li>
-        <li class=" ">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-1"><em class="fa fa-home"></em></div>
-            <div class="col-md-4"><%= link_to 'Home', home_path %></div>
-          </div>
 
-        </li>
         <li class=" ">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-1"><em class="fa fa-user-md"></em></div>
-            <div class="col-md-4"><%= link_to 'Profile', @p_user %></div>
-          </div>
-
-
-        </li>
-        <li class=" ">
-          <a href="#" title="Services">
-            <em class="fa fa-money "></em>
-            <span data-localize="sidebar.nav.SERVICES">Services</span>
+          <a href="/home" title="Home">
+            <em class="fa fa-home "></em>
+            <span data-localize="sidebar.nav.HOME">Home</span>
           </a>
         </li>
 
+        <li class=" ">
+          <a href="/me/1" title="Profile">
+            <em class="fa fa-user-md "></em>
+            <span data-localize="sidebar.nav.PROFILE">Profile</span>
+          </a>
+        </li>
 
       </ul>
       <!-- END sidebar nav-->
