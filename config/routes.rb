@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'payment' => 'payment#submit'
 
   get 'home' => 'home#show'
+
   get 'register' => 'p_users#new'
   get 'me/:id' => 'p_users#show'
 

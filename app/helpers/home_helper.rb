@@ -6,7 +6,6 @@ module HomeHelper
     @PaymentApi = Google::Apis::PaymentApiV1 #alias payment api
     @paymentApi = @PaymentApi::PaymentApiService.new
 
-    @payments = @paymentApi.list(limit: 10, client_id: '0').items
-
+    @payments = @paymentApi.list(limit: 10, client_id: session[:user_id]).items
   end
 end

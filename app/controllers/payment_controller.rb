@@ -16,7 +16,7 @@ class PaymentController < ApplicationController
 
     payment.update!(
         amount: params[:amount],
-        p_user_id: nil,
+        p_user_id: session[:user_id],
         id: -1,
         narration: params[:narration],
         revenue: revenue,
@@ -25,7 +25,9 @@ class PaymentController < ApplicationController
         payment_mode: payment_mode)
 
     insert_payment(payment)
-    redirect_to action: 'show', id: @payment_result.id
+    get_payment payment.receipt_number #get the db auto genned number
+
+    redirect_to action: 'show', id: @payment_result.receipt_number
 
 
   end

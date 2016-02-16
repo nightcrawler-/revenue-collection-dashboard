@@ -14,7 +14,7 @@
       </div>
     </div>
     <!-- END Language list    -->
-    Dashboard
+    Home
     <small data-localize="dashboard.WELCOME"></small>
   </div>
   <!-- START widgets box-->
@@ -93,7 +93,11 @@
       <div class="row">
         <div class="col-lg-12">
 
-          <%= render 'table' %>
+          <% if @payments %>
+              <%= render 'table' %>
+          <% else %>
+              <%= render 'no_history' %>
+          <% end %>
 
           <!-- END widget-->
         </div>
@@ -193,7 +197,7 @@
               </div>
               <div class="media-box-body clearfix">
                 <small class="text-muted pull-right ml">KSh 80/day</small>
-                <div class="media-box-heading"><a href="#" class="text-purple m0">PAY FOR PARKING</a>
+                <div class="media-box-heading"><a href="/payment" class="text-purple m0">PAY FOR SERVICES</a>
                 </div>
               </div>
             </div>

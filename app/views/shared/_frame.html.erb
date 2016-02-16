@@ -44,10 +44,10 @@
         </li>
 
         <li class=" ">
-          <a href="/me/1" title="Profile">
-            <em class="fa fa-user-md "></em>
-            <span data-localize="sidebar.nav.PROFILE">Profile</span>
-          </a>
+          <%= link_to id: session[:user_id], controller: 'p_users', action: 'show', id: session[:user_id] do %>
+              <em class="fa fa-user "></em>
+              <span data-localize="sidebar.nav.HOME">Profile</span>
+          <% end %>
         </li>
 
       </ul>

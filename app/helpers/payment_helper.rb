@@ -36,7 +36,7 @@ module PaymentHelper
   def get_payment(receipt_number)
     @PaymentApi = Google::Apis::PaymentApiV1 #alias payment api
     @payment_api = @PaymentApi::PaymentApiService.new
-    @payment_result = @payment_api.get(receipt_number)
+    @payment_result = @payment_api.validate_receipt(receipt_number)
 
   end
 

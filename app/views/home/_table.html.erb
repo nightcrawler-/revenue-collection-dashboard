@@ -21,11 +21,11 @@
             <tbody>
             <% @payments.each do |payment| %>
                 <tr>
-                  <td><%= payment.receipt_number %></td>
-                  <td><%= payment.transaction_date %></td>
-                  <td><%= payment.narration %></td>
+                  <td><%= link_to payment.receipt_number, controller: 'payment', action: :show, id: payment.receipt_number %></td>
+                  <td><%= link_to payment.transaction_date, controller: 'payment', action: :show, id: payment.receipt_number %></td>
+                  <td><%= link_to payment.narration, controller: 'payment', action: :show, id: payment.receipt_number %></td>
                   <td><%= payment.revenue.revenue_stream.name %></td>
-                  <td><%= payment.amount %></td>
+                  <td><%= link_to payment.amount, controller: 'payment', action: :show, id: payment.receipt_number %></td>
                 </tr>
             <% end %>
             </tbody>

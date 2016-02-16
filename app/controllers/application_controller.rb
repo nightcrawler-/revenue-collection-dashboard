@@ -8,7 +8,4 @@ class ApplicationController < ActionController::Base
   include PaymentHelper
   include Tokenable
 
-  def homepage
-    render text: 'Welcome Home'
-  end
 end
