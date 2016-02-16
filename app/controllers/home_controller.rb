@@ -1,5 +1,10 @@
 class HomeController < ApplicationController
   def show
-    list_payments
+
+    if session[:id]
+      list_payments
+    else
+      redirect_to '/'
+    end
   end
 end
