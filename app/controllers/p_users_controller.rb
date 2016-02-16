@@ -34,7 +34,9 @@ class PUsersController < ApplicationController
 
     respond_to do |format|
       if @p_user.save
-        format.html { redirect_to @p_user, notice: 'P user was successfully created.' }
+        log_in @p_user
+
+        format.html { redirect_to @p_user, notice: 'success' }
         format.json { render :show, status: :created, location: @p_user }
       else
         format.html { render :new }
