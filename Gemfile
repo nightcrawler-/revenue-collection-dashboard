@@ -19,6 +19,9 @@ gem 'google-api-client', '0.9'
 #required for some api calls responses
 gem 'responders', '~> 2.0'
 
+#google analytics
+gem 'google-analytics-rails', '1.0.0'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
