@@ -80,10 +80,10 @@
               <% if @p_user.verified %>
                   <%= render :partial => 'verified_panel' %>
               <% end %>
-              <% if !@p_user.verified && !@p_user.id_slash_passport_pic %>
+              <% if !@p_user.verified && (@p_user.id_slash_passport_pic.url(:medium).include? 'missing_id') %>
                   <%= render :partial => 'unverified_panel' %>
               <% end %>
-              <% if !@verified && !@p_user.verified && @p_user.id_slash_passport_pic %>
+              <% if !@verified && !@p_user.verified && !(@p_user.id_slash_passport_pic.url(:medium).include? 'missing_id')  %>
                   <%= render :partial => 'failed_verification_panel' %>
               <% end %>
 
