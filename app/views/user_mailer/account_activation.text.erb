@@ -1,0 +1,5 @@
+Hi <%= @p_user.first_name %>,
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+<%= edit_accounts_activation_path(@p_user.activation_token, email: @p_user.email) %>

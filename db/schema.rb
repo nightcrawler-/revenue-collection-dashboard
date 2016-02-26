@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211090425) do
+ActiveRecord::Schema.define(version: 20160226123740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -289,8 +289,8 @@ ActiveRecord::Schema.define(version: 20160211090425) do
     t.string   "email"
     t.string   "id_number"
     t.boolean  "verified"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
     t.string   "password_digest"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -300,6 +300,9 @@ ActiveRecord::Schema.define(version: 20160211090425) do
     t.string   "id_slash_passport_pic_content_type"
     t.integer  "id_slash_passport_pic_file_size"
     t.datetime "id_slash_passport_pic_updated_at"
+    t.string   "activation_digest"
+    t.boolean  "activated",                          default: false
+    t.datetime "activated_at"
   end
 
   create_table "payment", force: :cascade do |t|
@@ -313,6 +316,7 @@ ActiveRecord::Schema.define(version: 20160211090425) do
     t.integer  "paymentmode_id",   limit: 8
     t.integer  "revenue_id",       limit: 8
     t.integer  "users_id",         limit: 8
+    t.integer  "p_users_id"
   end
 
   add_index "payment", ["receiptnumber"], name: "payment_receiptnumber_key", unique: true, using: :btree
@@ -550,6 +554,7 @@ ActiveRecord::Schema.define(version: 20160211090425) do
   add_foreign_key "deviceallocation", "devices", column: "devices_id", name: "fk_deviceallocation_devices_id"
   add_foreign_key "eventlog", "users", name: "fk_eventlog_user_id"
   add_foreign_key "payment", "devices", column: "devices_id", name: "fk_payment_devices_id"
+  add_foreign_key "payment", "p_users", column: "p_users_id", name: "fk_payment_p_users_id"
   add_foreign_key "payment", "paymentmode", name: "fk_payment_paymentmode_id"
   add_foreign_key "payment", "revenue", name: "fk_payment_revenue_id"
   add_foreign_key "payment", "users", column: "users_id", name: "fk_payment_users_id"

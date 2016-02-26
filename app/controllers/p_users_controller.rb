@@ -34,7 +34,12 @@ class PUsersController < ApplicationController
 
     respond_to do |format|
       if @p_user.save
-        log_in @p_user
+        #activation things
+        UserMailer.account_activation(@p_user).deliver_now
+        flash[:info] = 'Please check your email to activate your account.'
+        #redirect_to '/index.html'
+
+        log_in @p_user # go to root or some please activate page isntead of login
 
         format.html { redirect_to @p_user, notice: 'success' }
         format.json { render :show, status: :created, location: @p_user }

@@ -79,4 +79,17 @@ Rails.application.configure do
 
   # Google analytics
   GA.tracker = 'UA-63149714-7'
+
+  host = 'web.ungomarevenue.co.ke'
+  config.action_mailer.default_url_options = { host: host }
+
+  ActionMailer::Base.smtp_settings = {
+      :user_name => 'bungomarevenue',
+      :password => 'desmosedici2090',
+      :domain => 'bungomarevenue.co.ke',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
 end

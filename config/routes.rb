@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :p_users
+  resources :accounts_activation, only: [:edit]
 
   get 'payment/filter' => 'payment#filter' #for form filtering based on selection
   get 'payment' => 'payment#new'
