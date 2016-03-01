@@ -49,7 +49,7 @@ Rails.application.configure do
       :password => 'desmosedici2090',
       :domain => 'bungomarevenue.co.ke',
       :address => 'smtp.sendgrid.net',
-      :port => 587,
+      :port => 2525, #587 is blocked on gce
       :authentication => :plain,
       :enable_starttls_auto => true
   }
