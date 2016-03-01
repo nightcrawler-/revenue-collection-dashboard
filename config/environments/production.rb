@@ -81,7 +81,7 @@ Rails.application.configure do
   GA.tracker = 'UA-63149714-7'
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :production
+  config.action_mailer.delivery_method = :smtp
   host = 'web.ungomarevenue.co.ke'
   config.action_mailer.default_url_options = { host: host }
 
