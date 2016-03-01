@@ -45,7 +45,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host }
 
   ActionMailer::Base.smtp_settings = {
-      :user_name => 'bungomarevenue',
+      :user_name => 'bungomacounty',
       :password => 'desmosedici2090',
       :domain => 'bungomarevenue.co.ke',
       :address => 'smtp.sendgrid.net',
