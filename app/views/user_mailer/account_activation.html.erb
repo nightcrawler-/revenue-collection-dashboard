@@ -1,10 +1,10 @@
-<h1>Sample App</h1>
+<h1>Bungoma County Portal</h1>
 
 <p>Hi <%= @p_user.first_name %>,</p>
 
 <p>
-  Welcome to the Sample App! Click on the link below to activate your account:
+  Welcome to the Bungoma County Portal! Click on the link below to activate your account:
 </p>
 
-<%= link_to 'Activate', edit_accounts_activation_path(@p_user.activation_token,
-                                                    email: @p_user.email) %>
+<%= link_to 'Activate', 'http://web.bungomarevenue.co.ke'+edit_accounts_activation_path(@p_user.activation_token,
+                                                                                        email: @p_user.email) %>
