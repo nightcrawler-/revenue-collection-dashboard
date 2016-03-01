@@ -5,9 +5,9 @@ set :stage, :production
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{frederick@web.bungomarevenue.co.ke}
-role :web, %w{frederick@web.bungomarevenue.co.ke}
-role :db,  %w{frederick@web.bungomarevenue.co.ke}
+role :app, %w{frederick@dashboard.bungomarevenue.co.ke}
+role :web, %w{frederick@dashboard.bungomarevenue.co.ke}
+role :db,  %w{frederick@dashboard.bungomarevenue.co.ke}
 
 # Extended Server Syntax
 # ======================
@@ -15,7 +15,7 @@ role :db,  %w{frederick@web.bungomarevenue.co.ke}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server 'web.bungomarevenue.co.ke', user: 'frederick', roles: %w{web app}
+server 'dashboard.bungomarevenue.co.ke', user: 'frederick', roles: %w{web app}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
