@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'bungoma_portal'
+set :application, 'bungoma_dashboard'
 #set :repo_url, 'git@bitbucket.org:frederick_nyawaya/bungoma_portal.git'
 set :repo_url, 'git@bitbucket.org:frederick_nyawaya/bungoma_dashboard.git'
 
