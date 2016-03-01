@@ -2,8 +2,8 @@
 lock '3.1.0'
 
 set :application, 'bungoma_portal'
-#set :repo_url, 'git@bitbucket.org:frederick_nyawaya/bungoma_portal.git'
-set :repo_url, 'git@bitbucket.org:bungomadev/bungoma_portal.git'
+set :repo_url, 'git@bitbucket.org:frederick_nyawaya/bungoma_portal.git'
+#set :repo_url, 'git@bitbucket.org:bungomadev/bungoma_portal.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
